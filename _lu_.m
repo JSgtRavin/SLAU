@@ -6,25 +6,25 @@
 function retval = _lu_ (factors, free)
     retval = -1;
 
-    if (ndims(factors) != 2)
-        disp("Массив коэффициентов не является матрицей.");
-        return;
-    endif
+    % if (ndims(factors) != 2)
+    %     disp("Массив коэффициентов не является матрицей.");
+    %     return;
+    % endif
 
-    if (ndims(free) != 1 && ndims(free) != 2)
-        disp("Свободные члены поданы неверно.");
-        return;
-    endif
+    % if (ndims(free) != 1 && ndims(free) != 2)
+    %     disp("Свободные члены поданы неверно.");
+    %     return;
+    % endif
 
-    if (max(size(factors)) != min(size(factors)))
-        disp("Матрица коэффициентов не является квадратной.");
-        return;
-    endif
+    % if (max(size(factors)) != min(size(factors)))
+    %     disp("Матрица коэффициентов не является квадратной.");
+    %     return;
+    % endif
 
-    if (length(free(1, :)) != length(factors))
-        disp("Неверная длина вектора свободных членов.");
-        return;
-    endif
+    % if (length(free(1, :)) != length(factors))
+    %     disp("Неверная длина вектора свободных членов.");
+    %     return;
+    % endif
 
     n = length(factors);
 

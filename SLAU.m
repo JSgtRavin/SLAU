@@ -41,9 +41,9 @@ disp("Проверка A * X = b...");
 for i = 1:vector_size
     computed_b = A * result(i,:)';
     original_b = b(i,:)';
-    error = norm(computed_b - original_b);
-    if error > 1e-4
-        fprintf("Вектор свободных членов %d: норма ошибки = %e\n", i, error);
+    error_value = norm(computed_b - original_b);
+    if error_value > 1e-4
+        fprintf("Вектор свободных членов %d: норма ошибки = %e\n", i, error_value);
         disp("Проверка не пройдена: A * X ≠ b.");
     % else
     %     disp("Проверка пройдена: A * X ≈ b (в пределах погрешности).");

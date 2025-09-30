@@ -1,7 +1,7 @@
 function X = _gauss_(factors, free)
-  if det(factors) == 0
-      error('Матрица вырожденная (det(A) = 0).');
-  end
+  % if det(factors) == 0
+  %     fprintf("Матрица вырожденная (det(A) = 0).\n");
+  % endif
   B = free';
   A = factors;
   N = size(A)(1);
