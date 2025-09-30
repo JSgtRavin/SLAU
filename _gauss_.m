@@ -1,7 +1,7 @@
 function X = _gauss_(factors, free)
-  if det(factors) == 0
-      error('Матрица вырожденная (det(A) = 0), нужна обратимая.');
-  end
+  % if det(factors) == 0
+  %     fprintf("Матрица вырожденная (det(A) = 0).\n");
+  % endif
   B = free';
   A = factors;
   N = size(A)(1);
@@ -12,11 +12,15 @@ function X = _gauss_(factors, free)
       B(i,:) -= B(i - 1,:) * t;
     endfor
   endfor
-
   X = NaN(size(B));
   X(N,:) = B(N,:) / A(N,N);
   for k = N - 1:-1:1
-    X(k,:) = (B(k,:) - sum(X(k + 1: N,:) .* A(k,:)(k + 1:N)')) / A(k,k);
+    summ = B(k,:);
+    for i = k + 1:N
+      summ -= X(i,:) * A(k, i);
+    endfor
+    X(k,:) = summ / A(k, k);
   endfor
   X = X';
 end
+
