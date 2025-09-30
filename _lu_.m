@@ -49,7 +49,7 @@ function retval = _lu_ (factors, free)
 
     endfor
 
-    factors
+    % factors
 
     % Перебор векторов свободных членов.
     if length(free(:, 1)) > 1
